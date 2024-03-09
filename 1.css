@@ -1,0 +1,61 @@
+#video-container, #content-container {
+    float: left;
+    width: 50%;
+}
+
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+a:hover {
+    color: blue; /* Change color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:100%;
+    height: 10vh;
+    margin-left: 10px;
+}
+
+body {
+    background-color: lightcyan;
+}
+
+#container{
+    position: absolute; /* Position the container absolutely */
+    top: 370px; /* Place the container 370 pixels from the top */
+    left: 0.6%; /* Align the container horizontally at the center */
+    /*transform: translateX(-50%);  Adjust to center the container */
+    width: 600px; /* Set the width of the container */
+    height: 531px; /* Set the height of the container */
+    background-color: whitesmoke; /* Background color for visualization */
+    border: 1px solid black; /* Border for visualization */
+}
+button {
+    border: none;
+    color: black;
+    padding: 10px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#write {
+    position: absolute; /* Position the container absolutely */
+    top: 50px; /* Place the container 50 pixels from the top */
+    left: 0%; /* Align the container horizontally at the center */
+    /*transform: translateX(-50%);  Adjust to center the container */
+    width: 599px; /* Set the width of the container */
+    height: 480px; /* Set the height of the container */
+    background-color: lightblue; /* Background color for visualization */
+    border: 1px solid black; /* Border for visualization */
+}
