@@ -7,17 +7,33 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
+
+
     <header>
         <nav>
-            <div class="logo">QuikLearn</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+          <img src="images/logo2.svg" alt="QuikLearn Logo" id="logo" href = "#home"/>
+          <i class="fas fa-bars" id="ham-menu"></i>
+          <ul id="nav-bar">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#team">Team</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </header>
+
+
     
     <section class="hero">
         <video autoplay muted loop id="background-video">
@@ -33,7 +49,16 @@
     <section class="about">
         <div class="container">
             <h2>About QuikLearn</h2>
-            <p>QuikLearn was founded in 2012 by two Stanford Computer Science professors who wanted to share their knowledge and skills with the world. With over 77 million learners, 100+ university partners, and thousands of courses, QuikLearn is a leading online learning platform.</p>
+            <p>Welcome to QuikLearn, your gateway to dynamic and accessible online education. At QuikLearn, we believe in the transformative power of learning, enabling individuals worldwide to unlock their potential, advance their careers, and pursue their passions.
+
+QuikLearn emerges as a beacon in the realm of e-learning platforms, offering a diverse range of courses meticulously curated to cater to various interests, skill levels, and professional aspirations. Whether you're a budding entrepreneur, a seasoned professional seeking to upskill, or an avid learner hungry for knowledge, QuikLearn is your trusted partner on your educational journey.</p> <br>
+
+
+
+<p>At QuikLearn, we're not just about disseminating information; we're about fostering a vibrant learning community where individuals from diverse backgrounds come together to exchange ideas, collaborate, and inspire one another. Through our interactive features, discussion forums, and networking opportunities, QuikLearn facilitates meaningful connections that extend beyond the virtual classroom.
+
+Join us at QuikLearn and embark on a transformative educational journey that transcends boundaries and unlocks boundless opportunities. Whether you're looking to acquire new skills, advance your career, or simply indulge your curiosity, QuikLearn is here to support you every step of the way. Discover the joy of learning with QuikLearn - where knowledge knows no limits.
+</p>
         </div>
     </section>
 
@@ -98,10 +123,70 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 QuikLearn. All rights reserved.</p>
-        </div>
-    </footer>
+
+      <div class="footer-innerdiv1">
+          <div class="col1">
+              <ul class="footer-ul">
+                  <li class="footer-li" style="font-weight: 700;">QuikLearn for Business</li>
+                  <li class="footer-li" style="font-weight: 700;">Become an Instructor</li>
+                  <li class="footer-li" style="font-weight: 700;">Mobile Apps</li>
+              </ul>
+          </div>
+          <div class="col2">
+              <ul class="footer-ul">
+                  <li class="footer-li">About Us</li>
+                  <li class="footer-li">Careers</li>
+                  <li class="footer-li">Blog</li>
+              </ul>
+          </div>
+          <div class="col3">
+              <ul class="footer-ul">
+                  <li class="footer-li">Topics</li>
+                  <li class="footer-li">Support</li>
+                  <li class="footer-li">Affiliate</li>
+              </ul>
+          </div>
+          <div class="col4">
+              <ul class="footer-ul" style="margin: 0px">
+                  <li class="footer-li">
+                      <button class="English-btn">
+                          <span style="margin-left:10px; margin-right: 15px; padding: 5px;">
+                              <i class="fas fa-globe-asia" style="margin-right: 10px;"></i>English</span>
+                          <i class="fas fa-angle-up"></i>
+                      </button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+
+
+
+
+      <!-- LAST DIV -->
+
+      <div class="footer-innerdiv2">
+          <!-- Div 1  -->
+          <div class="left-contlist">
+              <a href="javascript:void{0}">
+                  <img src="/images/logo2.svg" alt="QuikLearn" width="110px">
+              </a>
+              <span class="copyright-span" style="margin-left: 20px; color: #686f7a">Copyright © 2024 QuikLearn, Inc.</span>
+          </div>
+
+
+          <!-- Div 2 -->
+          <div class="right-contlist">
+              <ul class="ullist-right">
+                  <li class="r-li-itm">Terms</li>
+                  <li class="r-li-itm">Privacy Policy and Cookie Policy</li>
+                  <li class="r-li-itm">Intellectual Property</li>
+              </ul>
+          </div>
+
+      </div>
+
+  </footer>
 
     <script src="script.js"></script>
 </body>
