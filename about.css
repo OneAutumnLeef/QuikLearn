@@ -1,0 +1,167 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #2B2D42;
+    color: #fff;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Ensure text appears above the video */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* About section styles */
+.about {
+    background-color: #8D99AE;
+    color: #fff;
+    padding: 50px 0;
+}
+
+/* Features section styles */
+.features {
+    background-color: #EDF2F4;
+    padding: 50px 0;
+}
+
+.features .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Testimonials section styles */
+.testimonials {
+    padding: 50px 0;
+}
+
+.testimonial {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.testimonial p {
+    font-style: italic;
+}
+
+.testimonial .author {
+    font-weight: bold;
+}
+
+/* Team section styles */
+.team {
+    background-color: #2B2D42;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.team .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.team-member h3 {
+    margin-top: 10px;
+}
+
+/* Partners section styles */
+.partners {
+    background-color: #8D99AE;
+    padding: 50px 0;
+}
+
+.partners .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.partner {
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+.partner img {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
