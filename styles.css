@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#logo-container {
+    margin-top: 10px; 
+    margin-bottom: 20px; 
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align to the left */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 240px;
+    margin-bottom:10px;
+}
+#logo {
+    width: 120px; 
+    height: auto;
+}
+#side-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    height: 75vh;
+    top: 150px;
+    left: 30px;
+    width: 180px;
+    background-color: #f0f0f0; /* Add your desired background color here */
+    padding: 10px; /* Optional: Add padding for better appearance */
+}
+#side-column a {
+    margin-bottom: 50px;
+    display: block;
+    text-decoration: underline;
+    color: #333;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom:25px;
+}
+#search-bar {
+    margin-bottom: 50px;
+    width: 90%;
+    max-width: 650px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-top: 30px;
+}
+#search-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    height: 100%;
+}
+#courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: calc(80% - 60px);
+    margin-left: 60px;
+    width: 100%;
+}
+.course-container {
+    border: 1px solid #cecaca;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+.course-container:hover {
+    background-color: #efeaea;
+}
+.course-image {
+    width: 100%;
+    height: auto;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 2;
+}
+.course-details {
+    margin-top: 10px;
+}
+#filter-checkboxes {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+#filter-checkboxes input {
+    margin-bottom: 5px;
+}
+#filter {
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.course-container:hover .tooltip {
+    display: block;
+}
+#search-icon-container{
+    background-color: #dddddd;
+    margin-left:5px;
+    padding: 12px;
+    cursor:pointer;
+}
