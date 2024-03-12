@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Courses</title>
+</head>
+<body>
+    <div id="logo-container">
+        <img id="logo" src="photo.jpg" alt="Logo"> 
+    </div>
+
+    <div id="side-column">
+        <a href="#">Home</a>
+        <a href="#">Dashboard</a>
+        <a href="#">My Learning</a>
+        <a href="notes.html">Notes</a>
+    </div>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search courses...">
+        <div id="search-icon-container" onclick="searchCourses()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div id="filter">
+        <span>Filter by:</span>
+        <input type="checkbox" id="all-checkbox" onclick="filterCourses()"> All
+        <input type="checkbox" id="cs-checkbox" onclick="filterCourses()"> Computer Science
+        <input type="checkbox" id="math-checkbox" onclick="filterCourses()"> Maths
+        <input type="checkbox" id="eng-checkbox" onclick="filterCourses()"> English
+        <input type="checkbox" id="mgmt-checkbox" onclick="filterCourses()"> Management
+    </div>
+
+    <div id="courses-container">
+        <!-- Courses will be dynamically added here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
