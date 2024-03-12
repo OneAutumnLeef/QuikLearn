@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="notes.css">
+</head>
+<body>
+    <div id="note-container">
+        <h1>YOUR NOTES</h1>
+        <div id="note">
+            <div id="controls">
+                <input type="color" id="colorPicker" title="Text Color">
+                <input type="number" id="fontSize" placeholder="Font Size">
+                <select id="bulletType">
+                    <option value="circle">Number</option>
+                    <option value="square">Circle</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <div id="noteContent" contenteditable="true" placeholder="Start typing..."></div>
+        </div>
+    </div>
+
+    <script src="notes.js"> </script>
+</body>
+</html>
