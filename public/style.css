@@ -310,20 +310,21 @@ a{
 
 
 
-/*this is added my tanesh */
+/*this is added tanesh */
 
  
 .login-body {
   font-family: Arial, sans-serif;
   /* background-image: url('../public/images/wallpaper.jpg'); Add background image */
   background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the background image */
+  background-position:0px; /* Center the background image */
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("./images/wallpaper.jpg");
+  background-image: url("./images/wallpaper2.png");
+  /* background-image: url("./images/wallpaper.jpg"); */
 } 
 
 /* header{
@@ -335,11 +336,12 @@ a{
 } */
 
 .login-container {
-  background-color: #379a9a;
+  background-color: rgba(3, 47, 60, 0.2);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 30%;
+  height: 50%;
   text-align: center;
 }
 
@@ -350,7 +352,16 @@ a{
 .form-group {
   margin-bottom: 15px;
 }
-
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: rgba(3, 47, 60, 0.5);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
 .form-group label {
   display: block;
   margin-bottom: 5px;
