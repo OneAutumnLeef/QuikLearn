@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Online Courses</title>
+    
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+        }
+
+        #logo-container {
+            margin-top: 10px; 
+            margin-bottom: 20px; 
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 240px;
+            margin-bottom:10px;
+        }
+        #logo {
+            width: 120px; 
+            height: auto;
+        }
+        #side-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            height: 75vh;
+            top: 150px;
+            left: 30px;
+            width: 180px;
+            background-color: #f0f0f0; /* Add your desired background color here */
+            padding: 10px; /* Optional: Add padding for better appearance */
+        }
+        #side-column a {
+            margin-bottom: 50px;
+            display: block;
+            text-decoration: underline;
+            color: #333;
+            font-weight: bold;
+            font-size: 25px;
+            padding-bottom:25px;
+        }
+        #search-bar {
+            margin-bottom: 50px;
+            width: 90%;
+            max-width: 650px;
+            display: flex;
+            align-items: center;
+            height: 20px;
+            margin-top: 30px;
+        }
+        #search-input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            height: 100%;
+        }
+        #courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: calc(80% - 60px);
+            margin-left: 60px;
+            width: 100%;
+        }
+        .course-container {
+            border: 1px solid #cecaca;
+            padding: 10px;
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+        }
+        .course-container:hover {
+            background-color: #efeaea;
+        }
+        .course-image {
+            width: 100%;
+            height: auto;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+        .course-details {
+            margin-top: 10px;
+        }
+        #filter-checkboxes {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            z-index: 1;
+        }
+        #filter-checkboxes input {
+            margin-bottom: 5px;
+        }
+        #filter {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        .course-container:hover .tooltip {
+            display: block;
+        }
+        #search-icon-container{
+            background-color: #dddddd;
+            margin-left:5px;
+            padding: 12px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header"></div>
+    <div id = "coourses-content">
+    <div id="side-column">
+        <a href="/">Home</a>
+        <a href="#">Dashboard</a>
+        <a href="#">My Learning</a>
+        <a href="sample2.html">Notes</a>
+    </div>
+
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search courses...">
+        <div id="search-icon-container" onclick="searchCourses()">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div id="filter">
+        <span>Filter by:</span>
+        <input type="checkbox" id="all-checkbox" onclick="filterCourses()"> All
+        <input type="checkbox" id="cs-checkbox" onclick="filterCourses()"> Computer Science
+        <input type="checkbox" id="math-checkbox" onclick="filterCourses()"> Maths
+        <input type="checkbox" id="eng-checkbox" onclick="filterCourses()"> English
+        <input type="checkbox" id="mgmt-checkbox" onclick="filterCourses()"> Management
+    </div>
+
+    <div id="courses-container">
+        <!-- Courses will be dynamically added here -->
+    </div>
+</div>
+    
+
+    <script>
+        // Sample courses data
+        const courses = [
+        { title: "Web Development Fundamentals", category: "Computer Science", description: "Get started with web development.", link: "https://example.com/webdev", image: "https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png" },
+            { title: "Introduction to Programming", category: "Computer Science", description: "Learn the basics of programming.", link: "https://example.com/programming", image: "https://www.seekpng.com/png/detail/352-3528194_programming-language-free-png-image-programming-language.png" },
+            { title: "Algebra Basics", category: "Maths", description: "Explore fundamental concepts in algebra.", link: "https://example.com/algebra", image: "https://www.eurokidsindia.com/blog/wp-content/uploads/2023/09/what-is-algebra.jpg" },
+            { title: "English Literature", category: "English", description: "Dive into classic works of English literature.", link: "https://example.com/literature", image: "https://img.freepik.com/free-vector/watercolor-literature-illustration_52683-81536.jpg" },
+            { title: "Management Principles", category: "Management", description: "Understand key principles of management.", link: "https://example.com/management", image: "https://aaft.edu.in/wp-content/uploads/2023/03/business-management-help-review_141072_large.jpg" },
+            
+            { title: "Statistics for Beginners", category: "Maths", description: "Learn basic statistical concepts and analysis.", link: "https://example.com/statistics", image: "https://st.adda247.com/https://adda247jobs-wp-assets-prod.adda247.com/jobs/wp-content/uploads/sites/2/2022/09/08221320/Introduction-To-Statistics.png" },
+            { title: "Creative Writing", category: "English", description: "Express yourself through creative writing.", link: "https://example.com/creativewriting", image: "https://www.inspireculture.org.uk/uploads/images/Creative_Writing.2e16d0ba.fill-430x322_AMt2155.jpg" },
+            { title: "Project Management Essentials", category: "Management", description: "Essential skills for effective project management.", link: "https://example.com/projectmanagement", image: "https://www.simplilearn.com/ice9/free_resources_article_thumb/project_management_coursefees.jpg" },
+            { title: "Data Structures and Algorithms", category: "Computer Science", description: "Learn about data structures and algorithms.", link: "https://example.com/dsa", image: "https://miro.medium.com/v2/resize:fit:1358/1*4ZcW5tSdizlbtDQyVpRTuA.jpeg" }
+
+        ];
+
+        // Display initial courses
+        displayCourses(courses);
+
+        function displayCourses(coursesToShow) {
+            const coursesContainer = document.getElementById("courses-container");
+            coursesContainer.innerHTML = '';
+
+            coursesToShow.forEach(course => {
+                const courseContainer = document.createElement("div");
+                courseContainer.classList.add("course-container");
+
+                const courseImage = document.createElement("img");
+                courseImage.classList.add("course-image");
+                courseImage.src = course.image;
+                courseContainer.appendChild(courseImage);
+
+                const courseName = document.createElement("p");
+                courseName.innerText = course.title;
+                courseContainer.appendChild(courseName);
+
+                const tooltip = document.createElement("div");
+                tooltip.classList.add("tooltip");
+                tooltip.innerText = course.description;
+                courseContainer.appendChild(tooltip);
+
+                // Open the link in a new tab when clicking on the course container
+                courseContainer.onclick = function () {
+                    window.open(course.link, '_blank');
+                };
+
+                coursesContainer.appendChild(courseContainer);
+            });
+        }
+
+        function searchCourses() {
+            const searchTerm = document.getElementById("search-input").value.toLowerCase();
+            const filteredCourses = courses.filter(course => course.title.toLowerCase().includes(searchTerm));
+            displayCourses(filteredCourses);
+        }
+
+        function filterCourses() {
+            const allCheckbox = document.getElementById("all-checkbox");
+            const csCheckbox = document.getElementById("cs-checkbox");
+            const mathCheckbox = document.getElementById("math-checkbox");
+            const engCheckbox = document.getElementById("eng-checkbox");
+            const mgmtCheckbox = document.getElementById("mgmt-checkbox");
+
+            let filteredCourses = [];
+
+            if (allCheckbox.checked) {
+                filteredCourses = courses;
+            } else {
+                filteredCourses = courses.filter(course => {
+                    return (
+                        (csCheckbox.checked && course.category === "Computer Science") ||
+                        (mathCheckbox.checked && course.category === "Maths") ||
+                        (engCheckbox.checked && course.category === "English") ||
+                        (mgmtCheckbox.checked && course.category === "Management")
+                    );
+                });
+            }
+
+            displayCourses(filteredCourses);
+        }
+
+        // Toggle display of filter checkboxes
+        function toggleFilterCheckboxes() {
+            const filterCheckboxes = document.getElementById("filter-checkboxes");
+            filterCheckboxes.style.display = (filterCheckboxes.style.display === 'none' || filterCheckboxes.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+
+    <div id="footer"></div>
+    <script src="./index.js"></script>
+
+</body>
+</html>
