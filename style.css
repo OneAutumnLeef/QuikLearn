@@ -1,43 +1,81 @@
-#sundar {
-#video-container, #content-container {
+#video-container{ 
     float: left;
-    width: 50%;
+    width: 58%;
+    height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s;
+    /*border: 1px solid black;*/
 }
-
+#content-container {
+    float: right;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 h1 {
-    color: darkblue;
+    color: black;
+    /*background-color: darkcyan;*/
+    position: relative; /* Set position to relative */
+    left: 350px; /* Move the text 50px to the right */
+    top: 0px; /* Move the text 20px down */
+    width: 100%;
+    font-size: xx-large;
+}
+hr {
+    border: none; /* Remove the default border */
+    border-top: 1px solid black; /* Add a solid black border on the top side with a thickness of 3px */
 }
 
 h2 {
-    color: darkgreen;
+    color: darkcyan;
 }
-
+a {
+    color:darkcyan;
+}
 a:hover {
-    color: blue; /* Change color on hover */
+    /*color: light;  Change color on hover */
     text-decoration: underline; /* Underline on hover */
 }
 
-table, th, td {
+table, th {
     border: 1px solid black;
     border-collapse: collapse;
     width:100%;
-    height: 10vh;
-    margin-left: 10px;
+    height: 13vh;
+    margin-left: 0mm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#req {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:100%;
+    height: 13vh;
+    margin-left: 0mm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    background-color: lightcyan;
+    background-color: white;
+}
+#scroll {
+    width: 700px;  /*Set the width of the container*/ 
+    height: 80px;  /*Set the height of the container*/  
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    white-space: nowrap; /* Prevent wrapping of content */ 
+    border: 1px solid black; /*Optional: Add border for visual clarity*/ 
 }
 
 #container{
     position: absolute; /* Position the container absolutely */
-    top: 370px; /* Place the container 370 pixels from the top */
-    left: 0.6%; /* Align the container horizontally at the center */
+    top: 400px; /* Place the container 370 pixels from the top */
+    left: 0.1%; /* Align the container horizontally at the center */
     /*transform: translateX(-50%);  Adjust to center the container */
-    width: 600px; /* Set the width of the container */
-    height: 531px; /* Set the height of the container */
-    background-color: whitesmoke; /* Background color for visualization */
+    width: 700px; /* Set the width of the container */
+    height: 570px; /* Set the height of the container */
+    background-color: white; /* Background color for visualization */
     border: 1px solid black; /* Border for visualization */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
 }
 button {
     border: none;
@@ -46,18 +84,104 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 15px;
+    /*margin: 4px 2px;*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    margin-top: 0.4cm;
+    margin-right: 0.1932cm;
     cursor: pointer;
 }
 #write {
     position: absolute; /* Position the container absolutely */
-    top: 50px; /* Place the container 50 pixels from the top */
+    top: 73.6667px; /* Place the container 50 pixels from the top */
     left: 0%; /* Align the container horizontally at the center */
     /*transform: translateX(-50%);  Adjust to center the container */
-    width: 599px; /* Set the width of the container */
-    height: 480px; /* Set the height of the container */
-    background-color: lightblue; /* Background color for visualization */
-    border: 1px solid black; /* Border for visualization */
+    width: 579px; /* Set the width of the container */
+    height: 460px; /* Set the height of the container */
+    background-color: white; /* Background color for visualization */
+    /*border: 1px solid black;  Border for visualization*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+#header {
+    background-color: #008b8b;
 }
+.logocontainer {
+    /*display: flex;  Use flexbox for layout */
+    /*align-items: center;  Align items vertically */
+    position: relative; /* Set the container to relative positioning */
+    width: 0.6px; /* Adjust width as needed */
+    height: 0.4px; /* Adjust height as needed */
+}
+.logocontainer img {
+    /*position: absolute;  Set the image to absolute positioning */
+    position: absolute; /* Set the image to absolute positioning */
+    top: 0.1cm; /* Adjust top position as needed */
+    left: 0.25cm; /* Adjust left position as needed */
+}
+.cupcontainer {
+    /*display: flex;  Use flexbox for layout */
+    /*align-items: center;  Align items vertically */
+    position: relative; /* Set the container to relative positioning */
+    width: 6px; /* Adjust width as needed */
+    height: 4px; /* Adjust height as needed */
+}
+.cupcontainer img {
+    /*position: absolute;  Set the image to absolute positioning */
+    position: absolute; /* Set the image to absolute positioning */
+    top: -1.2cm; /* Adjust top position as needed */
+    left: 25cm; /* Adjust left position as needed */
+}
+.text {
+     /*display: flex;  Use flexbox for layout */
+    /*align-items: center;  Align items vertically */
+    position: relative; /* Set the container to relative positioning */
+    width: 6px; /* Adjust width as needed */
+    height: 4px; /* Adjust height as needed */
+}
+.text h6 {
+    position: absolute; /* Set the image to absolute positioning */
+    top: -1.2cm; /* Adjust top position as needed */
+    left: 26.5cm; /* Adjust left position as needed */
+}
+/* Define CSS animation 
+@keyframes bounceIn {
+    0% {
+      transform: translateY(100%);
+    }
+    50% {
+      transform: translateY(-30%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }*/
+  
+  #content1 {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+  }
+  
+  /* Initially hide the content */
+  .hidden1 {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+.hiddena {
+    display: none;
+}
+/*@keyframes scrollAnimation {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(100% - 100vw)); /* Adjust based on content width and viewport width 
+    }
+  }*/
